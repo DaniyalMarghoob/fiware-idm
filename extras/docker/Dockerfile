@@ -19,7 +19,7 @@ RUN git clone https://github.com/ging/keystone && \
     cd keystone && \
     git checkout tags/keyrock-6.0.0
     
-RUN git clone https://github.com/TampereTC/tre-smartcity-horizon && \
+RUN git clone https://github.com/DaniyalMarghoob/horizon && \
     cd horizon && \
     git checkout tags/keyrock-6.0.0
 
@@ -29,8 +29,7 @@ RUN cp keystone/etc/keystone.conf.sample keystone/etc/keystone.conf && \
     sed -i s/\$\$IDM_PASS/${IDM_PASS}/g horizon/openstack_dashboard/local/local_settings.py
 
 # Install python dependecies
-RUN sudo python keystone/tools/install_venv.py && \
-    sudo python horizon/tools/install_venv.py
+RUN sudo python keystone/tools/install_venv.py 
 
 WORKDIR keystone
 
