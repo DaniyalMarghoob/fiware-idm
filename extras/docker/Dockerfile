@@ -53,7 +53,7 @@ VOLUME /horizon/
 
 ### Exposed ports
 # - Keystone
-EXPOSE 5000
+EXPOSE 5000 
 # - Horizon (HTTP)
 EXPOSE 8000
 
