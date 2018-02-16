@@ -29,6 +29,7 @@ RUN cp keystone/etc/keystone.conf.sample keystone/etc/keystone.conf && \
     sed -i s/\$\$IDM_PASS/${IDM_PASS}/g horizon/openstack_dashboard/local/local_settings.py
 
 # Install python dependecies
+RUN  sudo -H .venv/bin/pip install six==1.9.0    
 RUN sudo python keystone/tools/install_venv.py 
 
 WORKDIR keystone
